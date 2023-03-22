@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "devtest12-8837"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "devtest12-8837"
+  template:
+    metadata:
+      labels:
+        app: "devtest12-8837"
+    spec:
+      containers:
+        - name: "devtest12-8837"
+          image: "azsum.azurecr.io/devtest12"
+          ports:
+          - containerPort: 80
